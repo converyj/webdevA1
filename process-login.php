@@ -25,12 +25,10 @@ if($row = $stmt->fetch()){
 	// $_SESSION['role'] = $row['role'];
 	$_SESSION['userID'] = $row['userID'];
 
-	header("Location: dashboard.php");
+	header("Location: home.php");
 
 }else{
-	$stmt = $pdo->prepare("
-	INSERT INTO `user` (`username`, `password`)
-	VALUES ('$username', '$password') ");
+	echo("User not found");
 
 $stmt->execute();
 }
