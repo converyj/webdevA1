@@ -22,7 +22,7 @@ if($row = $stmt->fetch()){
 	//start session if valid and redirect to dashboard
 	$_SESSION['logged-in'] = true;
 	$_SESSION['username'] = $row['username'];
-	// $_SESSION['role'] = $row['role'];
+	$_SESSION['role'] = $row['role'];
 	$_SESSION['userID'] = $row['userID'];
 
 	header("Location: home.php");
